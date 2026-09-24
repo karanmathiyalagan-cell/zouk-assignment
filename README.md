@@ -85,7 +85,7 @@ A greyscale mid-fidelity wireframe of the mobile drawer, with Zouk teal only for
 | 01 · Drawer, level one | The full drawer, with a dashed line marking the fold at 844. Shop (7 product types, including Travel, Zouk For Men, Gift Boxes and Accessories). Browse by, second and led by Print. Offers as a 2×2 block of rectangular cards (destinations, not filter pills). Account quiet at the bottom |
 | 02 · Shop → Bags | "All bags", then six equal tiles: Sling, Handbags, Tote, Satchels, Office, Lunch |
 | 03 · Bags → Sling Bags | Plain shape first, model names second (Flap, U-shaped, Baguette, Shoulder, Crossbody, Phone sling). All five baguettes together; Crossbody collection moved here from Travel |
-| 04 · Browse by → Print | Named prints with their home region, plus print families |
+| 04 · Browse by → Print | Named prints with their home region, plus print families as rectangular cards |
 | 05 · Browse by → Occasion | One reconciled list of eight, shared with the collection filter |
 | Pins + notes | 16 numbered notes, each tied to the friction or persona need it answers |
 | Problem & persona | Brief, discover vs. reach, Riya (26, Pune), frictions F1, F8 and F9, assumptions |
