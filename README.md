@@ -57,6 +57,23 @@ These sit below the main screens (y ≈ 4150), each as a full page plus a first-
 | B · Lino Perros-style | Breadcrumb, thumbnail strip, oversized title, savings badge, EMI card, Add to cart + Buy it now, dark trust band, icon accordions, 2-column spec table, "what it holds" infographic, review mention tags, FAQs | "59 people viewing", sale timer, three stacked coupons (cut to one offer) |
 | C · Mokobara-style | Inset header, Prints / Personalise / Compare tabs, a delivery date before any pincode, pay in full vs pay in 3, "Pair it with" above the description, feature carousel, bold promise block (Zouk's "100% vegan" in place of the 30-day trial), side-by-side Compare, delivery date in the sticky bar | Discount marquee, cart timer. Statement Office Bag figures in Compare are marked as placeholders until they're reconciled |
 
+# Task 2 · Collection page banners
+
+**Figma page:** `Task 2 · Collection banners` (same file)
+
+Collection: **Women's Office Bags**, with the Multicolor Mandala print as the hero. Two 390 × 160 mobile banners in the Indian-heritage direction. In both, an arch (a nod to jharokha and temple arches) frames the print and the bag.
+
+| Frame | What it shows |
+|---|---|
+| Banner 1 · Sale-led | Teal ground. "FLAT ₹400 OFF", a split code box (ON OFFICE BAGS / USE CODE WORK400), a plain end date with no countdown, and an underlined "Shop the collection" link. The arch is filled with the Mandala print, with the bag in front and a caption naming the print |
+| Banner 2 · Concept-led | Cream ground. "Your whole *workday*, one bag." in Inter Light with Fraunces Italic. The subline says what fits, then "Discover the collection". A teal arch shows the laptop, bottle and lunch inside the bag, above a band of the print, with a "Fits 15.6″ laptops" chip |
+| 2× previews | For review. Export at 3× (1170 × 480) |
+| In context ×2 | Each banner on a Women's Office Bags collection page (390 × 844) |
+| Brief & rationale | The brief, why aesthetics is the lever (Aesthetic-Usability Effect), the heritage direction, and what was and wasn't taken from the reference banners |
+| Specs & accessibility | Export sizes, safe areas and minimum type size. WCAG AA contrast for every text pair: the eyebrow was darkened from #CC664E (3.27:1) to #A94F3B (4.71:1). Also lists the offer assumptions |
+
+The offer amount and the code are placeholders for Zouk to set.
+
 ## Scripts
 
 `figma/cover-and-edge-states.js` builds the Cover and the edge-states board. It targets the original working file, which uses variables. The version run against the linked copy swaps the variables for hex values and reads from node `0:1631`.
