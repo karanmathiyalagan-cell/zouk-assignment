@@ -47,6 +47,16 @@ In the working file these are Figma variables in the `Zouk` collection. The copy
 
 The bags are vector illustrations standing in for Zouk's product photography. This session's sandbox couldn't reach Shopify's CDN or Figma's upload endpoint. Each image layer is named for the photo that belongs there (for example, `Main image — WOB_MMD_04`), so real photos can be dropped in as fills.
 
+## Alternate directions: competitor-inspired versions
+
+These sit below the main screens (y ≈ 4150), each as a full page plus a first-screen view with its own sticky bar. All three use the Zouk palette, type and content. Only the page structure and component patterns change.
+
+| Version | Borrowed from the competitor | Deliberately left out |
+|---|---|---|
+| A · Miraggio-style | Sharp-cornered editorial look, uppercase title, photo-tile swatches, "Key Features" with laptop fit first, dimensions by axis (plus handle drop, still to measure), "Details worth loving" image story, 2-column rail tagged by use and laptop size | Buy-2-get-1 countdown |
+| B · Lino Perros-style | Breadcrumb, thumbnail strip, oversized title, savings badge, EMI card, Add to cart + Buy it now, dark trust band, icon accordions, 2-column spec table, "what it holds" infographic, review mention tags, FAQs | "59 people viewing", sale timer, three stacked coupons (cut to one offer) |
+| C · Mokobara-style | Inset header, Prints / Personalise / Compare tabs, a delivery date before any pincode, pay in full vs pay in 3, "Pair it with" above the description, feature carousel, bold promise block (Zouk's "100% vegan" in place of the 30-day trial), side-by-side Compare, delivery date in the sticky bar | Discount marquee, cart timer. Statement Office Bag figures in Compare are marked as placeholders until they're reconciled |
+
 ## Scripts
 
 `figma/cover-and-edge-states.js` builds the Cover and the edge-states board. It targets the original working file, which uses variables. The version run against the linked copy swaps the variables for hex values and reads from node `0:1631`.
