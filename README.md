@@ -74,6 +74,27 @@ Collection: **Women's Office Bags**, with the Multicolor Mandala print as the he
 
 The offer amount and the code are placeholders for Zouk to set.
 
+# Task 3 · Mobile navigation wireframe
+
+**Figma page:** `Task 3 · Mobile navigation` (same file)
+
+A greyscale mid-fidelity wireframe of the mobile drawer, with Zouk teal only for active states and orange numbered pins for annotations. Level one has four zones: **Shop → Browse by → Offers → Account**. Every product type is one tap from opening the drawer.
+
+| Frame | What it shows |
+|---|---|
+| 01 · Drawer, level one | The full drawer, with a dashed line marking the fold at 844. Shop (7 product types, including Travel, Zouk For Men, Gift Boxes and Accessories). Browse by, second and led by Print. Offers as a separate chip block. Account quiet at the bottom |
+| 02 · Shop → Bags | "All bags", then six equal tiles: Sling, Handbags, Tote, Satchels, Office, Lunch |
+| 03 · Bags → Sling Bags | Plain shape first, model names second (Flap, U-shaped, Baguette, Shoulder, Crossbody, Phone sling). All five baguettes together; Crossbody collection moved here from Travel |
+| 04 · Browse by → Print | Named prints with their home region, plus print families |
+| 05 · Browse by → Occasion | One reconciled list of eight, shared with the collection filter |
+| Pins + notes | 16 numbered notes, each tied to the friction or persona need it answers |
+| Problem & persona | Brief, discover vs. reach, Riya (26, Pune), frictions F1, F8 and F9, assumptions |
+| Information architecture | All four zones with every product line placed, plus the footwear question for Zouk |
+| What I changed, and why | 12-row table: change → why → which friction it answers |
+| One structure, two layouts / Metrics | Mobile and desktop read from one navigation source with one canonical URL per label; four success metrics |
+
+Print home regions and the treatment of sold-out lines (Zoe, Regular) are marked for Zouk to confirm.
+
 ## Scripts
 
 `figma/cover-and-edge-states.js` builds the Cover and the edge-states board. It targets the original working file, which uses variables. The version run against the linked copy swaps the variables for hex values and reads from node `0:1631`.
