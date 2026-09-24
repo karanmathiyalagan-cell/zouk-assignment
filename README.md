@@ -108,6 +108,24 @@ Five 1440 px wireframes that render the same four zones, labels and destinations
 
 Print home regions and the treatment of sold-out lines (Zoe, Regular) are marked for Zouk to confirm.
 
+# Task 4 · Make your own set (combo builder)
+
+**Figma page:** `Task 4 · Make your own set` (same file)
+
+A mobile user flow and wireframe for "Make Your Own Combo", for Rohan (34, Hyderabad), who is building an anniversary gift. The feature is called a **set** everywhere ("Make it a set", "Build your set", "Set price"), so it isn't confused with Zouk's 130 fixed combos.
+
+| Frame | What it shows |
+|---|---|
+| Problem & persona | Brief, how I read it, Rohan, the seven frictions (F13, fixed combos, F1, F12, F10, delivery date, F6), assumptions |
+| User flow | Three entries (product page, gifting, pre-built combo) → set builder → pinned set tray ↔ add a companion ↔ matching suggestions → "Happy with the set?" (swap loop) → "Is this a gift?" → gift options → review → existing cart. Orange numbers map to steps 1–8 |
+| Screen 1 · The way in | Product page with a "Make it a set" block under the price (the saving stated up front; the bag already in slot one; empty "+ Wallet / + Pouch" slots). Sticky Add to Cart unchanged |
+| Screen 2 · Building the set | Suggested category tabs, the same filters as collection pages, "Same print" then "Goes well with it" results, and a pinned tray: 2 items · ₹2,698 ~~₹2,998~~ · You save ₹300 (10%) · "Add 1 more to save 15%" |
+| Screen 3 · Gift options | "This is a gift" toggle, gift box, message card, hidden prices, and "Arrives by Fri, 2 Oct" shown before any pincode. Tray: 3 items · ₹2,972 · You save ₹525 (15%) · best set price unlocked |
+| Screen 4 · Review | Items with a "Change" link on each, the price summary, delivery and gift details, return terms in plain words, "Add set to cart · ₹2,972" |
+| Steps table · Rules · Categories + metrics | The 8 steps with what he sees, why, and which friction each answers; rules (max 5 items, saving capped at 3, no stacking, duplicates, out of stock, one name); suggested categories by first item; success metrics and guardrails |
+
+Placeholders: the 10% / 15% tiers, the wallet (₹999) and pouch (₹499) prices, and the gift box (Free*). The ₹1,999 bag is Zouk's real Kutch Gamthi Classic Handbag price.
+
 ## Scripts
 
 `figma/cover-and-edge-states.js` builds the Cover and the edge-states board. It targets the original working file, which uses variables. The version run against the linked copy swaps the variables for hex values and reads from node `0:1631`.
