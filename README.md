@@ -93,6 +93,19 @@ A greyscale mid-fidelity wireframe of the mobile drawer, with Zouk teal only for
 | What I changed, and why | 12-row table: change → why → which friction it answers |
 | One structure, two layouts / Metrics | Mobile and desktop read from one navigation source with one canonical URL per label; four success metrics |
 
+### Desktop website (same page, below the mobile screens)
+
+Five 1440 px wireframes that render the same four zones, labels and destinations as the drawer:
+
+| Frame | What it shows |
+|---|---|
+| D1 · Header, closed | Logo, then **Shop ⌄ · Browse by ⌄ · Offers** (one highlighted link). Search on the right, and Account / Wishlist / Bag as header icons |
+| D2 · Shop panel open | A wide panel: the six bag types as tiles (mobile 02), then Backpacks, Travel, Wallets & small bags, Zouk For Men, Gift Boxes and Accessories as columns, each ending in "All …" |
+| D3 · Browse by panel open | Print leads (named prints with their home region), then Print families, Occasion (the same eight), Budget + New Arrivals, and Collections & collabs with one-line descriptions |
+| D4 · Account menu open | Sign in first, then Zouk Tribe, Store locator, About, Care guide, Reviews and Contact |
+| D5 · Bags → Sling Bags | Mobile 03 becomes a shape row on the collection page (shape first, model names second). Laptop size and Occasion stay as filters |
+| One source, two layouts | Table mapping each zone and level to where it appears on mobile and on desktop |
+
 Print home regions and the treatment of sold-out lines (Zoe, Regular) are marked for Zouk to confirm.
 
 ## Scripts
