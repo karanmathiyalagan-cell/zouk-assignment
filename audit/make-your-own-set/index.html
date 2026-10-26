@@ -148,8 +148,8 @@ footer { font-size: 0.88rem; color: var(--muted); display: grid; gap: 8px; borde
 <header class="top">
   <p class="eyebrow">Zouk · mobile web · Figma page “Make Your Own Set · Final” · audited 26 Oct 2026 · revised after product decisions</p>
   <h1>Make Your Own Set: UX and AOV audit</h1>
-  <p class="lede">The builder’s job is to sell a matching set: one bag, then a wallet, pouch and charm in the same print. The structure supports that. A box you fill slot by slot, a running total and a nudge before paying are the right pieces. But the screens don’t deliver the matching yet. Every step shows office bags, none leads with the bag’s print, the tray total is wrong, and discount UI from earlier ideas is still spread across the flow. Fix those and the A/B test will measure what the feature is meant to do.</p>
-  <p class="verdict">Not ready for the A/B test: 4 blockers</p>
+  <p class="lede">The builder’s job is to sell a matching set: one bag, then a wallet, pouch and charm in the same print. The structure supports that. A box you fill slot by slot, a running total and a nudge before paying are the right pieces. But the screens don’t deliver the matching yet. Every step shows office bags, none leads with the bag’s print, the tray total is wrong, and the no-discount screens the test will ship aren’t drawn yet. Fix those and the A/B test will measure what the feature is meant to do.</p>
+  <p class="verdict">Not ready for the A/B test: 3 blockers</p>
   <nav class="toc" aria-label="Sections">
     <a href="#decisions">Decisions</a>
     <a href="#flow">The flow</a>
@@ -169,6 +169,7 @@ footer { font-size: 0.88rem; color: var(--muted); display: grid; gap: 8px; borde
   <h2>What this audit assumes</h2>
   <ul class="plain">
     <li><b>No discounts in the first version.</b> The builder ships without any box discount and is A/B tested first. If it doesn’t convert well enough, the next lever is gifts (for example gift wrap or a charm), not a price cut.</li>
+    <li><b>The discount screens stay in the file.</b> They are kept on purpose as a ready-made variant in case discounts are switched on later. This audit treats them as Variant B, not as something to remove.</li>
     <li><b>The reason to use it is a matching look.</b> Shoppers come to put the same print across different products: bag, wallet, pouch, charm.</li>
     <li><b>Savings are shown as real MRP savings, added up.</b> Each item shows its MRP struck through and its sale price (e.g. ₹2,000 → ₹1,500, you save ₹500). The tray and review add these up across the box, so a full set shows the full saving. The strike price is always the item’s real MRP, and the saving is labelled as savings on MRP, never as a combo saving (see A3).</li>
   </ul>
@@ -178,7 +179,7 @@ footer { font-size: 0.88rem; color: var(--muted); display: grid; gap: 8px; borde
   <div class="fact"><span class="big">₹2,099.80</span><p>Gap between the Box of 4 total in the tray (₹2,697) and on the review screen (₹4,796.80) for the same four bags.</p></div>
   <div class="fact"><span class="big">0 of 3</span><p>Add-on steps (wallet, pouch, charm) that show products from the category they ask for. All three show women’s office bags.</p></div>
   <div class="fact"><span class="big">0 of 3</span><p>Add-on steps that lead with the print of the bag picked in Step 1, even though Step 2 promises “same print first”.</p></div>
-  <div class="fact"><span class="big">6</span><p>Places where discount UI is still on screen and has to come out before the no-discount test.</p></div>
+  <div class="fact"><span class="big">0 of 3</span><p>Review screens drawn without a discount, which is the version the test will actually ship.</p></div>
 </section>
 
 <section id="flow" class="stack">
@@ -256,9 +257,9 @@ footer { font-size: 0.88rem; color: var(--muted); display: grid; gap: 8px; borde
 
     <article class="finding has-fig" id="a2">
       <div class="text">
-        <div class="fhead"><span class="sev sev-blocker">Blocker</span><span class="fid">A2</span><h3>Discount UI is still in the flow</h3></div>
+        <div class="fhead"><span class="sev sev-high">High</span><span class="fid">A2</span><h3>The discount variant is drawn; the no-discount version isn’t</h3></div>
         <p class="where">Menus · Box of 4 · With milestones · review screens · exit dialogs</p>
-        <p>The test version has no box discount, but six places still promise or apply one:</p>
+        <p>Keeping the discount screens as a ready variant is a good call. The gap is that they are the only version drawn. These six places exist only with a discount:</p>
         <ul class="plain">
           <li>“Save more” tag on the Women menu and on the Sale menu.</li>
           <li>The milestones bar (free shipping at 2, gift wrap at 3, “20% off” at 4).</li>
@@ -267,12 +268,21 @@ footer { font-size: 0.88rem; color: var(--muted); display: grid; gap: 8px; borde
           <li>“You are saving ₹1,199.20 on this combo.” in the pay bar.</li>
           <li>The tray’s “You saved” figures, which are computed as a combo discount.</li>
         </ul>
-        <p>If any of these ship, people are promised a discount they won’t get, and the test is no longer measuring a no-discount builder.</p>
-        <div class="fix"><span class="label">Fix</span><p>Strip them from the test build and replace the copy as listed in D2. Move the milestones frame to a “Phase 2 · Gifts” section. Its slot-by-slot reward bar is a ready-made design for the gift variant if the test calls for one. Drop “Free shipping” from it either way: Zouk already ships every prepaid order free.</p></div>
+        <p>Developers building the test will have no spec for the tray, review, exit dialog or menu without a discount. If they copy these frames, shoppers get promised a discount they won’t receive, and the test stops measuring a no-discount builder.</p>
+        <div class="fix"><span class="label">Fix</span><p>Group the discount frames in a section labelled “Variant B · Discounts (not in test)” and draw the no-discount versions of those six places for the test build, using the copy in D2.</p></div>
+        <div class="fix"><span class="label">Before Variant B is ever switched on</span>
+          <ul class="plain">
+            <li>Pick one model. The file has two: the milestones bar (gift wrap at 3, 20% at 4) and 10 / 15 / 20% by box size. The tray also applies 20% from the second item.</li>
+            <li>Make it beat the sitewide “Flat 15% off above ₹2,500”, or let it stack. As drawn, Box of 2 at 10% costs ₹2,698.20, which is ₹149.90 more than the same two bags with the banner. Box of 3 at 15% costs the same.</li>
+            <li>Drop “Free shipping” from the milestones. Zouk already ships every prepaid order free.</li>
+            <li>Use whole rupees, not ₹1,199.20.</li>
+          </ul>
+          <p>The milestones bar also works as the design for the gift test if that comes first.</p>
+        </div>
       </div>
       <figure>
         <img class="shot" src="shots/box4-milestones.png" alt="Box of 4 with milestones: Your bag, Free shipping, Free gift wrap, 20% off" width="390" height="844">
-        <figcaption>Park this for the gift test; take it out of the first version.</figcaption>
+        <figcaption>Variant B. Keep it, label it, and draw the version without it.</figcaption>
       </figure>
     </article>
 
@@ -549,7 +559,7 @@ footer { font-size: 0.88rem; color: var(--muted); display: grid; gap: 8px; borde
   <ol class="play">
     <li><h3>Right category at each step, same print first</h3><p>This is the product. One bag plus a wallet, pouch and charm in the same print, with the set visibly building in the tray.</p><div class="tags"><span class="tag">B1 · B2</span><span class="tag">Blocker</span><span class="tag">Effort M</span></div></li>
     <li><h3>Correct totals from one rule</h3><p>Total = sum of sale prices, struck = sum of MRPs, saving = the difference. Updates on every change, whole rupees.</p><div class="tags"><span class="tag">A1 · C3</span><span class="tag">Blocker</span><span class="tag">Effort S</span></div></li>
-    <li><h3>Remove every discount promise</h3><p>Six places listed in A2. Park the milestones frame for the gift test.</p><div class="tags"><span class="tag">A2</span><span class="tag">Blocker</span><span class="tag">Effort S</span></div></li>
+    <li><h3>Draw the no-discount screens, label the discount ones</h3><p>No-discount versions of the six places in A2 for the test build; the discount frames grouped as “Variant B”.</p><div class="tags"><span class="tag">A2</span><span class="tag">Effort S</span></div></li>
     <li><h3>Honest added-up savings, in both arms</h3><p>“You save ₹6,000 on MRP” in green in the builder, and the same line in the control cart.</p><div class="tags"><span class="tag">A3 · C1</span><span class="tag">Effort S</span></div></li>
     <li><h3>Sell the look at the entry point</h3><p>“Match your print”, box sizes described by what goes in them, a real set photo on a banner.</p><div class="tags"><span class="tag">A4</span><span class="tag">Effort S</span></div></li>
     <li><h3>“Complete your set” on exit and review</h3><p>Show what the set is missing, in her print, with one-tap adds.</p><div class="tags"><span class="tag">A5 · A6</span><span class="tag">Effort S</span></div></li>
@@ -596,7 +606,7 @@ footer { font-size: 0.88rem; color: var(--muted); display: grid; gap: 8px; borde
 <footer>
   <p><b>Method.</b> All 25 frames on the Figma page “Make Your Own Set · Final” (node 1588:3255, file mf5eFMoSk0N3PUW7u1Dtu3) were reviewed in their empty and added states. They were compared with the “Make Your Own Combo · Flow” page (V2, 22 Oct 2026) for intent, and with the Web/Mobile Navigation page (06 PLP / Women’s Office Bags, 04 Menu Drawer / Sale) for UI consistency.</p>
   <p><b>Live site, checked 26 Oct 2026.</b> zouk.co.in home page, /collections/special-combos, /collections/wallets and /policies/shipping-policy (“We offer free shipping to all over India on all prepaid orders.”).</p>
-  <p><b>Revision.</b> Updated the same day for two product decisions: no discounts during the A/B test, and a matching same-print look as the value proposition. Prices in the Figma file are mock prices; every figure in the tables comes from the frames as drawn.</p>
+  <p><b>Revision.</b> Updated the same day for three product decisions: no discounts during the A/B test, a matching same-print look as the value proposition, and the discount screens kept in the file as a ready variant. Prices in the Figma file are mock prices; every figure in the tables comes from the frames as drawn.</p>
 </footer>
 
 </div>
