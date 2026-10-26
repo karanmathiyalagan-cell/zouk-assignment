@@ -146,32 +146,43 @@ footer { font-size: 0.88rem; color: var(--muted); display: grid; gap: 8px; borde
 <div class="wrap">
 
 <header class="top">
-  <p class="eyebrow">Zouk · mobile web · Figma page “Make Your Own Set · Final” · audited 26 Oct 2026</p>
+  <p class="eyebrow">Zouk · mobile web · Figma page “Make Your Own Set · Final” · audited 26 Oct 2026 · revised after product decisions</p>
   <h1>Make Your Own Set: UX and AOV audit</h1>
-  <p class="lede">The builder has the right bones: a box you fill slot by slot, a running total, and a nudge to add one more before paying. It is not ready for development yet. The tray total never matches the review screen, every step shows office bags whatever it asks for, and at 10–15% off the box is no better than the 15% banner at the top of the same screen. Fix those three and this feature can lift order value.</p>
-  <p class="verdict">Not ready for dev handoff: 4 blockers</p>
+  <p class="lede">The builder’s job is to sell a matching set: one bag, then a wallet, pouch and charm in the same print. The structure supports that. A box you fill slot by slot, a running total and a nudge before paying are the right pieces. But the screens don’t deliver the matching yet. Every step shows office bags, none leads with the bag’s print, the tray total is wrong, and discount UI from earlier ideas is still spread across the flow. Fix those and the A/B test will measure what the feature is meant to do.</p>
+  <p class="verdict">Not ready for the A/B test: 4 blockers</p>
   <nav class="toc" aria-label="Sections">
+    <a href="#decisions">Decisions</a>
     <a href="#flow">The flow</a>
     <a href="#works">What works</a>
-    <a href="#pricing">Offer and pricing</a>
+    <a href="#pricing">Pricing and savings</a>
     <a href="#ux">Flow and interaction</a>
     <a href="#ui">UI consistency</a>
     <a href="#a11y">Accessibility and copy</a>
-    <a href="#playbook">AOV plan</a>
-    <a href="#measure">Measurement</a>
+    <a href="#playbook">Plan for the test build</a>
+    <a href="#measure">A/B test design</a>
     <a href="#questions">Open questions</a>
   </nav>
 </header>
 
+<section id="decisions" class="panel">
+  <p class="eyebrow">Product decisions · 26 Oct 2026</p>
+  <h2>What this audit assumes</h2>
+  <ul class="plain">
+    <li><b>No discounts in the first version.</b> The builder ships without any box discount and is A/B tested first. If it doesn’t convert well enough, the next lever is gifts (for example gift wrap or a charm), not a price cut.</li>
+    <li><b>The reason to use it is a matching look.</b> Shoppers come to put the same print across different products: bag, wallet, pouch, charm.</li>
+    <li><b>Savings are shown as real MRP savings, added up.</b> Each item shows its MRP struck through and its sale price (e.g. ₹2,000 → ₹1,500, you save ₹500). The tray and review add these up across the box, so a full set shows the full saving. The strike price is always the item’s real MRP, and the saving is labelled as savings on MRP, never as a combo saving (see A3).</li>
+  </ul>
+</section>
+
 <section class="facts" aria-label="Key numbers">
   <div class="fact"><span class="big">₹2,099.80</span><p>Gap between the Box of 4 total in the tray (₹2,697) and on the review screen (₹4,796.80) for the same four bags.</p></div>
-  <div class="fact"><span class="big">₹149.90</span><p>How much more a Box of 2 costs than the same two bags bought with the “Flat 15% off above ₹2,500” banner shown on every builder screen.</p></div>
   <div class="fact"><span class="big">0 of 3</span><p>Add-on steps (wallet, pouch, charm) that show products from the category they ask for. All three show women’s office bags.</p></div>
-  <div class="fact"><span class="big">25</span><p>Frames reviewed: Box of 2, 3 and 4 in empty and added states, the milestone variant, three exit dialogs, three review screens, two menus.</p></div>
+  <div class="fact"><span class="big">0 of 3</span><p>Add-on steps that lead with the print of the bag picked in Step 1, even though Step 2 promises “same print first”.</p></div>
+  <div class="fact"><span class="big">6</span><p>Places where discount UI is still on screen and has to come out before the no-discount test.</p></div>
 </section>
 
 <section id="flow" class="stack">
-  <p class="eyebrow">How the flow works today</p>
+  <p class="eyebrow">How the flow works today · 25 frames reviewed</p>
   <h2>Menu, four picks, an exit check, then review and pay</h2>
   <div class="strip">
     <figure><img class="shot" src="shots/menu-women.png" alt="Women menu with Build your own combo expanded: Box of 2, Box of 3 (Most popular), Box of 4" width="390" height="844"><figcaption><b>Entry</b>Menu → Build your own combo → Box of 2 / 3 / 4</figcaption></figure>
@@ -188,12 +199,12 @@ footer { font-size: 0.88rem; color: var(--muted); display: grid; gap: 8px; borde
   <p class="eyebrow">Keep these</p>
   <h2>What already works</h2>
   <div class="works">
-    <div class="work"><h3>The slot tray shows the goal</h3><p>Empty “+” slots next to filled thumbnails make the box feel unfinished. That pull toward completion is the main AOV engine here, so keep it.</p></div>
-    <div class="work"><h3>Box of 3 is marked Most popular</h3><p>A sensible default that puts Box of 4 in the anchor position. It just needs the savings beside it to do its job.</p></div>
-    <div class="work"><h3>“Add more &amp; save more” on review</h3><p>On the Box of 2 and 3 reviews, naming the next tier (“Add 1 more product to get 15% off”) next to one-tap picks is the strongest upsell in the file.</p></div>
-    <div class="work"><h3>An exit that doesn’t trap people</h3><p>“Check out now” plus a confirm step lets someone leave with 2 or 3 items instead of abandoning. Fewer lost orders, as long as the dialog sells the upgrade (see A5).</p></div>
+    <div class="work"><h3>The slot tray shows the goal</h3><p>Empty “+” slots next to filled thumbnails make the set feel unfinished. That pull toward completion is the main order-value engine when there’s no discount, so keep it.</p></div>
+    <div class="work"><h3>“Everything else will be matched to it”</h3><p>Step 1’s subtitle already states the value: pick the hero bag, the rest follows. The steps after it just need to keep that promise.</p></div>
+    <div class="work"><h3>A rail of extras on review</h3><p>The Box of 2 and 3 reviews end with one-tap picks. Change the reason from “save more” to “complete your set” and it stays the strongest upsell in the file.</p></div>
+    <div class="work"><h3>An exit that doesn’t trap people</h3><p>“Check out now” plus a confirm step lets someone leave with 2 or 3 items instead of abandoning. Fewer lost orders, as long as the dialog sells the rest of the set (see A5).</p></div>
     <div class="work"><h3>Built from the PLP</h3><p>The product card, filter bar and badges come from the Office Bags PLP, so the builder feels like the same site.</p></div>
-    <div class="work"><h3>Two ways in</h3><p>The entry sits under both Women and Sale with a “Save more” tag, which catches browsers and deal-seekers.</p></div>
+    <div class="work"><h3>Box of 3 marked Most popular</h3><p>A sensible default that also gives the test a clear starting point.</p></div>
   </div>
 </section>
 
@@ -202,23 +213,23 @@ footer { font-size: 0.88rem; color: var(--muted); display: grid; gap: 8px; borde
     <p class="eyebrow">Findings</p>
     <h2>24 findings, by area</h2>
     <div class="legend">
-      <span><span class="sev sev-blocker">Blocker</span>Fix before handoff</span>
+      <span><span class="sev sev-blocker">Blocker</span>Fix before the test</span>
       <span><span class="sev sev-high">High</span>Costs orders or order value</span>
       <span><span class="sev sev-medium">Medium</span>Consistency and polish</span>
     </div>
   </div>
 
-  <!-- A · Offer and pricing -->
+  <!-- A · Pricing and savings -->
   <div class="group" id="pricing">
-    <p class="eyebrow">A · Offer and pricing (product)</p>
+    <p class="eyebrow">A · Pricing, savings and the offer (product)</p>
 
     <article class="finding has-fig wide-fig" id="a1">
       <div class="text">
         <div class="fhead"><span class="sev sev-blocker">Blocker</span><span class="fid">A1</span><h3>The tray total is wrong at almost every step</h3></div>
         <p class="where">Box of 4 / Steps 2–4 (both states) · Box of 3 / Steps 2–3 · Box of 2 / Step 2 · all three review screens</p>
-        <p>The total doesn’t change when a product is added: “Step 2 · Product added” still reads ₹1,499 with two bags in the box. The struck-through price jumps between unrelated numbers (₹1,874, ₹2,998, ₹3,371), and the third bag adds only ₹299. None of the tray totals match the review screen. On Box of 2 the saving even <em>drops</em> at review, from ₹375 to ₹299.80.</p>
+        <p>The total doesn’t change when a product is added: “Step 2 · Product added” still reads ₹1,499 with two bags in the box. The struck-through price jumps between unrelated numbers (₹1,874, ₹2,998, ₹3,371), and the third bag adds only ₹299. None of the tray totals match the review screen.</p>
         <p><span class="label">Why it matters.</span> The running total is the reason the tray exists. A shopper who sees ₹2,697 and then ₹4,796.80 one tap later reads it as a bait-and-switch, at the most expensive point in the funnel to lose her.</p>
-        <div class="fix"><span class="label">Fix</span><p>Write the pricing rule down once (see A3) and drive every number from it. The tray shows the total, one struck-through reference, and the % the box currently earns, and updates on every add or remove. Add a “Product added” frame for every step with real arithmetic so developers have a reference.</p></div>
+        <div class="fix"><span class="label">Fix</span><p>With no discount the rule is simple, so state it in the spec: <b>total</b> = sum of sale prices, <b>struck price</b> = sum of MRPs, <b>you save</b> = the difference. Update on every add or remove. Add a “Product added” frame for every step with real numbers so developers have a reference.</p></div>
       </div>
       <figure class="pair">
         <img class="shot" src="shots/box4-step4-added.png" alt="Box of 4 step 4 with all four slots filled; tray says ₹2,697, saved ₹674" width="390" height="844">
@@ -230,105 +241,99 @@ footer { font-size: 0.88rem; color: var(--muted); display: grid; gap: 8px; borde
     <div class="table-wrap">
       <table>
         <caption class="eyebrow" style="text-align:left;padding:12px 12px 0">Price reconciliation, Box of 4 (every bag is ₹1,499 sale, ₹2,999 MRP in the file)</caption>
-        <thead><tr><th>Frame</th><th class="r">Items in box</th><th class="r">Tray total</th><th class="r">Struck price</th><th class="r">“You saved”</th><th class="r">Sum of sale prices</th></tr></thead>
+        <thead><tr><th>Frame</th><th class="r">Items</th><th class="r">Tray now: total / struck / saved</th><th class="r">Should show: total / MRP / you save</th></tr></thead>
         <tbody>
-          <tr><td>Step 2</td><td class="r num">1</td><td class="r num">₹1,499</td><td class="r num">₹1,874</td><td class="r num">₹375</td><td class="r num">₹1,499</td></tr>
-          <tr><td>Step 2 · Product added</td><td class="r num">2</td><td class="r num"><span class="bad">₹1,499</span></td><td class="r num">₹1,874</td><td class="r num">₹375</td><td class="r num">₹2,998</td></tr>
-          <tr><td>Step 3</td><td class="r num">2</td><td class="r num">₹2,398</td><td class="r num">₹2,998</td><td class="r num">₹600</td><td class="r num">₹2,998</td></tr>
-          <tr><td>Step 3 · Product added</td><td class="r num">3</td><td class="r num"><span class="bad">₹2,398</span></td><td class="r num">₹2,998</td><td class="r num">₹600</td><td class="r num">₹4,497</td></tr>
-          <tr><td>Step 4</td><td class="r num">3</td><td class="r num"><span class="bad">₹2,697</span></td><td class="r num">₹3,371</td><td class="r num">₹674</td><td class="r num">₹4,497</td></tr>
-          <tr><td>Step 4 · Product added</td><td class="r num">4</td><td class="r num"><span class="bad">₹2,697</span></td><td class="r num">₹3,371</td><td class="r num">₹674</td><td class="r num">₹5,996</td></tr>
-          <tr><td>Preview · Review your combo</td><td class="r num">4</td><td class="r num">₹4,796.80</td><td class="r num">₹5,996</td><td class="r num">₹1,199.20</td><td class="r num">₹5,996</td></tr>
-          <tr><td>Box of 2 · Step 2 added → Review</td><td class="r num">2</td><td class="r num">₹1,499 → ₹2,698.20</td><td class="r num">₹1,874 → ₹2,998</td><td class="r num"><span class="bad">₹375 → ₹299.80</span></td><td class="r num">₹2,998</td></tr>
+          <tr><td>Step 2</td><td class="r num">1</td><td class="r num">₹1,499 / ₹1,874 / ₹375</td><td class="r num">₹1,499 / ₹2,999 / ₹1,500</td></tr>
+          <tr><td>Step 2 · Product added</td><td class="r num">2</td><td class="r num"><span class="bad">₹1,499</span> / ₹1,874 / ₹375</td><td class="r num">₹2,998 / ₹5,998 / ₹3,000</td></tr>
+          <tr><td>Step 3</td><td class="r num">2</td><td class="r num">₹2,398 / ₹2,998 / ₹600</td><td class="r num">₹2,998 / ₹5,998 / ₹3,000</td></tr>
+          <tr><td>Step 3 · Product added</td><td class="r num">3</td><td class="r num"><span class="bad">₹2,398</span> / ₹2,998 / ₹600</td><td class="r num">₹4,497 / ₹8,997 / ₹4,500</td></tr>
+          <tr><td>Step 4</td><td class="r num">3</td><td class="r num"><span class="bad">₹2,697</span> / ₹3,371 / ₹674</td><td class="r num">₹4,497 / ₹8,997 / ₹4,500</td></tr>
+          <tr><td>Step 4 · Product added</td><td class="r num">4</td><td class="r num"><span class="bad">₹2,697</span> / ₹3,371 / ₹674</td><td class="r num">₹5,996 / ₹11,996 / ₹6,000</td></tr>
+          <tr><td>Preview · Review your combo</td><td class="r num">4</td><td class="r num"><span class="bad">₹4,796.80</span> / ₹5,996 / ₹1,199.20</td><td class="r num">₹5,996 / ₹11,996 / ₹6,000</td></tr>
         </tbody>
       </table>
     </div>
 
-    <article class="finding" id="a2">
+    <article class="finding has-fig" id="a2">
       <div class="text">
-        <div class="fhead"><span class="sev sev-blocker">Blocker</span><span class="fid">A2</span><h3>The box is not a better deal than offers already on screen</h3></div>
-        <p class="where">Announcement bar on every builder frame · review screens · live zouk.co.in</p>
-        <p>Every builder screen carries “Flat 15% off on orders above ₹2,500”. Unless the box discount stacks with it, the builder is worse than ignoring it for two items and no better for three. On the live site, wallets run “Buy any 2 at ₹1,299 / ₹1,399” and Special Combos already sells fixed bag + sling sets at ₹2,249–₹2,549, so a deal-seeker has stronger offers one menu row away.</p>
-      </div>
-      <div class="table-wrap">
-        <table>
-          <thead><tr><th>Box</th><th class="r">Sale-price total</th><th class="r">Box price (review)</th><th class="r">Same bags with 15% banner</th><th>Box vs banner</th></tr></thead>
-          <tbody>
-            <tr><td>Box of 2 · 10%</td><td class="r num">₹2,998</td><td class="r num">₹2,698.20</td><td class="r num">₹2,548.30</td><td><span class="bad">₹149.90 dearer</span></td></tr>
-            <tr><td>Box of 3 · 15%</td><td class="r num">₹4,497</td><td class="r num">₹3,822.45</td><td class="r num">₹3,822.45</td><td>Same price</td></tr>
-            <tr><td>Box of 4 · 20%</td><td class="r num">₹5,996</td><td class="r num">₹4,796.80</td><td class="r num">₹5,096.60</td><td><span class="ok">₹299.80 cheaper</span></td></tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="text">
-        <p><span class="label">Why it matters.</span> Shoppers compare. If the builder isn’t clearly the best deal, it gets ignored, or worse, it trains people that “build your own” means paying more. Support will also field “which offer applies?” questions.</p>
-        <div class="fix"><span class="label">Fix</span><p>Decide stacking first: does the banner or a coupon apply on top, and do BOGO items count toward a box? Then make every box size beat the banner. Two options: stack the box % on top of the banner, or switch to round box prices that match how Zouk already sells (“Any 3 for ₹3,499”, “Any 4 for ₹4,299”). Round prices also remove the ₹1,199.20-style paise (C3).</p></div>
-      </div>
-    </article>
-
-    <article class="finding has-fig" id="a3">
-      <div class="text">
-        <div class="fhead"><span class="sev sev-blocker">Blocker</span><span class="fid">A3</span><h3>Four different offer models in one file</h3></div>
-        <p class="where">Flow page overview · Box of 4 · With milestones · tray · review screens · confirm dialogs</p>
+        <div class="fhead"><span class="sev sev-blocker">Blocker</span><span class="fid">A2</span><h3>Discount UI is still in the flow</h3></div>
+        <p class="where">Menus · Box of 4 · With milestones · review screens · exit dialogs</p>
+        <p>The test version has no box discount, but six places still promise or apply one:</p>
         <ul class="plain">
-          <li><b>Flow page (V2, 22 Oct):</b> “No discounts, tiers or offer logic in this version.”</li>
-          <li><b>Milestones frame:</b> free shipping at 2 items, free gift wrap at 3, 20% off at 4.</li>
-          <li><b>Tray:</b> 20% off from the second item in a Box of 4 (₹600 saved on two bags).</li>
-          <li><b>Review screens:</b> 10% / 15% / 20% by box size.</li>
+          <li>“Save more” tag on the Women menu and on the Sale menu.</li>
+          <li>The milestones bar (free shipping at 2, gift wrap at 3, “20% off” at 4).</li>
+          <li>“20% / 15% / 10% OFF” on every review row, with prices like ₹1,199.20.</li>
+          <li>“Add more &amp; save more · Add 1 more product to get 15% off” on the Box of 2 and 3 reviews.</li>
+          <li>“You are saving ₹1,199.20 on this combo.” in the pay bar.</li>
+          <li>The tray’s “You saved” figures, which are computed as a combo discount.</li>
         </ul>
-        <p>The exit dialog doesn’t say which rate applies if someone leaves with 2 of 4. And the “Free shipping” milestone is worth nothing: Zouk already ships free on every prepaid order (shipping policy). It only has value as a COD-fee waiver.</p>
-        <div class="fix"><span class="label">Fix</span><p>Pick one model and tie the reward to items in the box, not to the box chosen: 2 items earn tier 1, 3 earn tier 2, 4 earn tier 3. Box size then becomes a target, and leaving early drops you to a lower tier without any surprise. Swap “Free shipping” for something with real value: free gift wrap, free initials (the Flow page prices them at ₹149) or a waived COD fee.</p></div>
+        <p>If any of these ship, people are promised a discount they won’t get, and the test is no longer measuring a no-discount builder.</p>
+        <div class="fix"><span class="label">Fix</span><p>Strip them from the test build and replace the copy as listed in D2. Move the milestones frame to a “Phase 2 · Gifts” section. Its slot-by-slot reward bar is a ready-made design for the gift variant if the test calls for one. Drop “Free shipping” from it either way: Zouk already ships every prepaid order free.</p></div>
       </div>
       <figure>
         <img class="shot" src="shots/box4-milestones.png" alt="Box of 4 with milestones: Your bag, Free shipping, Free gift wrap, 20% off" width="390" height="844">
-        <figcaption>Milestones say 20% only at 4 items. The tray on the same screen already claims a 20% saving.</figcaption>
+        <figcaption>Park this for the gift test; take it out of the first version.</figcaption>
       </figure>
+    </article>
+
+    <article class="finding" id="a3">
+      <div class="text">
+        <div class="fhead"><span class="sev sev-high">High</span><span class="fid">A3</span><h3>Show added-up savings on MRP, and label them honestly</h3></div>
+        <p class="where">Tray · review pay bar · control arm’s cart</p>
+        <p>Adding up each item’s MRP-to-sale saving across the box (₹1,500 per bag here, ₹6,000 for a full box) is standard practice, and Zouk’s PLP already does it (“You’re saving ₹799 · 3 items added”). A bigger number at checkout does make the order feel like a good deal. Two rules keep it on the right side of the line:</p>
+        <ul class="plain">
+          <li><b>The struck price is the item’s real MRP</b>, the same one shown on its product page. Never set a higher strike price for the builder.</li>
+          <li><b>Say where the saving comes from.</b> “You save ₹6,000 on MRP”, not “on this combo” or “combo savings”. The same prices are available outside the builder, so crediting the box with them is a misleading price claim. The CCPA’s 2023 dark-pattern guidelines are aimed at exactly this, and shoppers who compare tabs will notice.</li>
+        </ul>
+        <p><span class="label">For the A/B test.</span> If the builder shows a large “you save” figure and the control cart doesn’t, any lift may come from that line rather than from the builder. Show the same added-up savings line in the control arm’s cart so the test isolates the builder.</p>
+        <div class="fix"><span class="label">Fix</span><p class="copy">Total ₹5,996   <s>₹11,996</s><br>You save ₹6,000 on MRP</p><p>Use the PLP’s green savings style (C1) and whole rupees.</p></div>
+      </div>
     </article>
 
     <article class="finding has-fig" id="a4">
       <div class="text">
-        <div class="fhead"><span class="sev sev-high">High</span><span class="fid">A4</span><h3>The savings ladder is hidden until the last screen</h3></div>
-        <p class="where">Menu / Women · Menu / Sale · step headers · tray</p>
-        <p>The menu says “Save more” but lists Box of 2, 3 and 4 with no numbers. Step headers and the tray never say what the box earns. 10% / 15% / 20% first appears on the review screen, after the size decision is made. The menu can’t sell the bigger box if it doesn’t show the reward.</p>
+        <div class="fhead"><span class="sev sev-high">High</span><span class="fid">A4</span><h3>The entry point sells savings, not the look</h3></div>
+        <p class="where">Menu / Women · Menu / Sale</p>
+        <p>The menu row says “Save more” and lists Box of 2, 3 and 4 with nothing about what goes in them. Without a discount, the reason to tap is the matching set, and the menu shows none of it. It also sits under Sale, next to BOGO deals, which sets a deal expectation the builder won’t meet.</p>
         <div class="fix"><span class="label">Fix</span>
-          <p>Show the ladder where people choose, and keep it visible while they fill the box:</p>
-          <p class="copy">Box of 2 · 10% off<br>Box of 3 · 15% off · Most popular<br>Box of 4 · 20% off · Best value</p>
-          <p>Add a size switcher to the builder header (the Flow page had “Combo of 4 ▾”) so upgrading mid-way is one tap. Tray copy: “2 of 4 added · add 2 more for 20% off”.</p>
+          <p>Describe the set, not the saving:</p>
+          <p class="copy">Match your print · NEW<br>Box of 2 · Bag + 1 matching piece<br>Box of 3 · Bag + wallet + 1 more · Most popular<br>Box of 4 · Bag + wallet + pouch + charm</p>
+          <p>Add a homepage or PLP banner with a real same-print set photo (the Flow page planned both). Keep the Sale entry for the test, but track the two entry points separately: Sale traffic may expect a deal.</p>
         </div>
       </div>
       <figure>
-        <img class="shot" src="shots/menu-women.png" alt="Menu with Box of 2, 3, 4 and no savings shown" width="390" height="844">
-        <figcaption>“Save more”, but how much?</figcaption>
+        <img class="shot" src="shots/menu-women.png" alt="Menu with Box of 2, 3, 4 and a Save more tag" width="390" height="844">
+        <figcaption>“Save more”, but there is no discount.</figcaption>
       </figure>
     </article>
 
     <article class="finding has-fig" id="a5">
       <div class="text">
-        <div class="fhead"><span class="sev sev-high">High</span><span class="fid">A5</span><h3>The exit dialog doesn’t say what leaving costs</h3></div>
+        <div class="fhead"><span class="sev sev-high">High</span><span class="fid">A5</span><h3>The exit dialog doesn’t show what the set is missing</h3></div>
         <p class="where">Overlay / Confirm · 2 products, 3 products, 2 of 3 products</p>
-        <p>“Checkout with 2 of 4 products?” shows no price, no lost saving and no suggestion. “Add more products” just drops the shopper back into a grid. This is the moment of highest intent in the whole flow, and it is spent on a yes/no question.</p>
+        <p>“Checkout with 2 of 4 products?” is a yes/no question with no pictures. “Add more products” drops the shopper back into a grid. Without a discount, the pull to stay is the unfinished look, and the dialog doesn’t show it.</p>
         <div class="fix"><span class="label">Fix</span>
-          <p>Frame it as a loss, with numbers, and put two or three one-tap add-ons matched to her bag inside the sheet:</p>
-          <p class="copy">You’re 2 items away from 20% off<br>Check out now: ₹2,698 (save ₹300)<br>Complete your box: save ₹1,199<br>[ + Same-print wallet ₹1,299 ] [ + Pouch ₹699 ]<br>[ Complete my box ]  [ Pay ₹2,698 for 2 ]</p>
-          <p>Prices in the copy are illustrative; wire them to the real rule from A3.</p>
+          <p>Show the gap, in her print, with one-tap adds inside the sheet:</p>
+          <p class="copy">Your FloMotif set is missing a pouch and a charm<br>[ pouch thumbnail · ₹699 · + Add ] [ charm thumbnail · ₹399 · + Add ]<br>[ Complete my set ]   [ Pay ₹2,998 for 2 ]</p>
+          <p>Prices in the copy are illustrative.</p>
         </div>
       </div>
       <figure>
         <img class="shot" src="shots/confirm-2of4.png" alt="Checkout with 2 of 4 products dialog" width="390" height="720">
-        <figcaption>No price, no saving, no suggestion.</figcaption>
+        <figcaption>No pictures, no reason to stay.</figcaption>
       </figure>
     </article>
 
     <article class="finding has-fig" id="a6">
       <div class="text">
-        <div class="fhead"><span class="sev sev-high">High</span><span class="fid">A6</span><h3>Upgrade cards don’t show the real price of the next item</h3></div>
-        <p class="where">Box of 2 / Preview · Box of 3 / Preview · “Add more &amp; save more”</p>
-        <p>Going from Box of 2 to Box of 3 moves the total from ₹2,698.20 to ₹3,822.45, so the third bag effectively costs ₹1,124 instead of ₹1,499. The recommendation cards show ₹1,499 with a ₹2,999 strike, which hides the best argument for upgrading. It is also unclear that tapping “+” turns a Box of 2 into a Box of 3.</p>
-        <div class="fix"><span class="label">Fix</span><p>Show the effective price on each card (“+₹1,124 in your box”) and retitle the rail “Upgrade to Box of 3 · 15% off on everything”. After the add, confirm with a toast: “Now a Box of 3. You save ₹675.”</p></div>
+        <div class="fhead"><span class="sev sev-high">High</span><span class="fid">A6</span><h3>Turn “Add more &amp; save more” into “Complete your set”</h3></div>
+        <p class="where">Box of 2 / Preview · Box of 3 / Preview</p>
+        <p>The rail is the right idea, but it recommends more office bags in other prints and gives a discount as the reason. It’s also unclear that tapping “+” turns a Box of 2 into a Box of 3.</p>
+        <div class="fix"><span class="label">Fix</span><p>Fill the rail with the missing categories in the bag’s print, titled “Complete your FloMotif set”. After an add, confirm with a toast: “Added. Your box is now a Box of 3.” Show the same rail on the Box of 4 review if any category in that print hasn’t been used.</p></div>
       </div>
       <figure>
         <img class="shot" src="shots/box2-review.png" alt="Box of 2 review with Add more and save more rail" width="390" height="844">
-        <figcaption>Good idea; the card price undersells it.</figcaption>
+        <figcaption>Right spot; wrong products and wrong reason.</figcaption>
       </figure>
     </article>
 
@@ -336,8 +341,8 @@ footer { font-size: 0.88rem; color: var(--muted); display: grid; gap: 8px; borde
       <div class="text">
         <div class="fhead"><span class="sev sev-medium">Medium</span><span class="fid">A7</span><h3>Box of 4 review has nothing after the list</h3></div>
         <p class="where">Box of 4 / Preview · Review your combo</p>
-        <p>Once the box is full there is no further offer. The Flow page already planned personalised initials (+₹149), and the Gift Shop sells gift-box combos, so the parts for a last add-on exist.</p>
-        <div class="fix"><span class="label">Fix</span><p>Add low-friction extras under the list: gift wrap toggle, initials on the main bag (+₹149), and “Start another box” for gifting. Keep them below the items and above the pay bar, one line each.</p></div>
+        <p>Once the box is full there is no further offer. The Flow page already planned personalised initials (+₹149), which is a paid extra and fits the no-discount rule.</p>
+        <div class="fix"><span class="label">Fix</span><p>Add one or two paid extras under the list: initials on the main bag (+₹149) and “Start another box” for gifting. Keep free gift wrap back for the Phase 2 gift test so the first version stays clean.</p></div>
       </div>
     </article>
 
@@ -345,8 +350,8 @@ footer { font-size: 0.88rem; color: var(--muted); display: grid; gap: 8px; borde
       <div class="text">
         <div class="fhead"><span class="sev sev-medium">Medium</span><span class="fid">A8</span><h3>“Proceed to pay” skips the cart, and the cart already has 3 items</h3></div>
         <p class="where">All review screens · header cart badge</p>
-        <p>The header shows 3 items in the cart. It’s unclear whether “Proceed to pay” checks out the box alone or the whole cart. The Flow page planned for box items to land in the cart as a group with “Edit combo”; the Final page jumps straight to payment. Returns aren’t covered either: if one item of a box comes back, how is the discount recalculated?</p>
-        <div class="fix"><span class="label">Fix</span><p>Add the box to the cart as a group (keeps cart offers working and lets people keep shopping, which helps AOV), with “Pay now” as the express option. State the partial-return rule in one line on the review screen.</p></div>
+        <p>The header shows 3 items in the cart. It’s unclear whether “Proceed to pay” checks out the box alone or the whole cart. The Flow page planned for box items to land in the cart as a group with “Edit combo”; the Final page jumps straight to payment.</p>
+        <div class="fix"><span class="label">Fix</span><p>Add the box to the cart as a group (cart offers keep working and people can keep shopping), with “Pay now” as the express option. Tag each box item with a box ID as a cart attribute so the test can attribute orders.</p></div>
       </div>
     </article>
   </div>
@@ -359,8 +364,8 @@ footer { font-size: 0.88rem; color: var(--muted); display: grid; gap: 8px; borde
       <div class="text">
         <div class="fhead"><span class="sev sev-blocker">Blocker</span><span class="fid">B1</span><h3>Every step shows office bags</h3></div>
         <p class="where">Steps 2–4 in Box of 2, 3 and 4 · review screens</p>
-        <p>“Add a wallet”, “Add a pouch or organiser” and “Finish with a charm” all show ₹1,399–₹1,499 women’s office bags tagged “Fits 15″ Laptop” and “Top pick for office”. Step 1’s filter chips (“Bestseller”, “Up to 15″”) carry over to every step. The review ends with four office bags, which is not a set.</p>
-        <p><span class="label">Why it matters for AOV.</span> Order value comes from attaching cheaper, complementary items that need little thought: a wallet in the same print, a pouch, a charm. Asking someone to pick four ₹1,499 bags is a much harder sell than one bag plus three easy extras.</p>
+        <p>“Add a wallet”, “Add a pouch or organiser” and “Finish with a charm” all show ₹1,399–₹1,499 women’s office bags tagged “Fits 15″ Laptop” and “Top pick for office”. Step 1’s filter chips (“Bestseller”, “Up to 15″”) carry over to every step. The review ends with four office bags in four prints, the opposite of a matching set.</p>
+        <p><span class="label">Why it matters.</span> A matching look across categories is now the whole reason the feature exists. It is also what lifts order value without a discount: one bag plus cheaper, easy extras in the same print is a much easier yes than four bags.</p>
         <div class="fix"><span class="label">Fix</span><p>Give each step its own grid and filters: wallets (zip, bi-fold, card case), pouches and organisers, charms. Reset filters between steps. Even if the Final page is a mock, these frames will be read as the spec.</p></div>
       </div>
       <figure>
@@ -371,10 +376,10 @@ footer { font-size: 0.88rem; color: var(--muted); display: grid; gap: 8px; borde
 
     <article class="finding" id="b2">
       <div class="text">
-        <div class="fhead"><span class="sev sev-high">High</span><span class="fid">B2</span><h3>“Same print first” isn’t delivered</h3></div>
-        <p class="where">Step 2 subtitle · Step 4 grid</p>
-        <p>After picking the Flomotif bag, Step 2’s first result is Mughal Art. Step 4 offers the Flomotif bag again, already in the box, with no “In your box” state, so duplicates are possible.</p>
-        <div class="fix"><span class="label">Fix</span><p>Pre-select a “Same print as your bag” chip, pin those items first with a small “Same print” tag, and mark anything already in the box. A matching set is Zouk’s real advantage here; make it the default.</p></div>
+        <div class="fhead"><span class="sev sev-blocker">Blocker</span><span class="fid">B2</span><h3>“Same print first” isn’t delivered</h3></div>
+        <p class="where">Step 2 subtitle · Steps 2–4 grids</p>
+        <p>After picking the Flomotif bag, Step 2’s first results are Mughal Art and Bidri Kaiser, and Steps 3–4 don’t lead with Flomotif either. Step 4 offers the Flomotif bag again, already in the box, with no “In your box” state, so duplicates are possible.</p>
+        <div class="fix"><span class="label">Fix</span><p>Pre-select a “Same print as your bag” chip and pin those items first with a small “Same print” tag. Mark anything already in the box. Show the set taking shape: the tray thumbnails all in one print say more than any copy. Decide the fallback for prints that don’t exist in every category (see open questions).</p></div>
       </div>
     </article>
 
@@ -401,7 +406,7 @@ footer { font-size: 0.88rem; color: var(--muted); display: grid; gap: 8px; borde
         <div class="fhead"><span class="sev sev-medium">Medium</span><span class="fid">B5</span><h3>Previous and Next don’t say much</h3></div>
         <p class="where">Box Tray, all steps</p>
         <p>On Step 1, a disabled “Previous” takes half the bar. A disabled “Next” doesn’t say why. The Flow page had better labels: “Next: Wallet →” and “Pick a wallet to continue”.</p>
-        <div class="fix"><span class="label">Fix</span><p>Move back to the header arrow. Give the single primary button a specific label: “Pick a wallet to continue” while disabled, “Next: Pouch” when enabled, “Review box” on the last step.</p></div>
+        <div class="fix"><span class="label">Fix</span><p>Move back to the header arrow. Give the single primary button a specific label: “Pick a wallet to continue” while disabled, “Next: Pouch” when enabled, “Review your set” on the last step.</p></div>
       </div>
     </article>
 
@@ -436,8 +441,8 @@ footer { font-size: 0.88rem; color: var(--muted); display: grid; gap: 8px; borde
       <div class="text">
         <div class="fhead"><span class="sev sev-high">High</span><span class="fid">C1</span><h3>Savings are shown in red here and green on the PLP</h3></div>
         <p class="where">Review pay bar · tray “You saved” pill · vs. 06 PLP / Women’s Office Bags (Web/Mobile Navigation page)</p>
-        <p>The builder writes “You are saving ₹1,199.20 on this combo.” in red and puts “You saved ₹375” in a maroon pill. The PLP in the same file uses green with a check: “You’re saving ₹799”. Red reads as an error or a price increase. “Saved” is also the wrong tense before payment.</p>
-        <div class="fix"><span class="label">Fix</span><p>Use the PLP’s green savings treatment everywhere and write “You save ₹1,199”.</p></div>
+        <p>The builder writes its saving in red and puts “You saved ₹375” in a maroon pill. The PLP in the same file uses green with a check: “You’re saving ₹799”. Red reads as an error or a price increase. “Saved” is also the wrong tense before payment. Since the added-up saving is now the main money message (A3), it needs the clearest treatment.</p>
+        <div class="fix"><span class="label">Fix</span><p>Use the PLP’s green savings treatment everywhere and write “You save ₹6,000 on MRP”.</p></div>
       </div>
       <figure class="pair">
         <img class="shot" src="shots/ref-plp.png" alt="PLP with green You're saving ₹799 bar" width="390" height="844">
@@ -457,10 +462,10 @@ footer { font-size: 0.88rem; color: var(--muted); display: grid; gap: 8px; borde
 
     <article class="finding" id="c3">
       <div class="text">
-        <div class="fhead"><span class="sev sev-medium">Medium</span><span class="fid">C3</span><h3>Prices with paise, and three different reference prices</h3></div>
-        <p class="where">Review screens · tray · product cards</p>
-        <p>Review prices read ₹1,199.20, ₹4,796.80, ₹1,274.15. The live site and the rest of this file use whole rupees. The struck price is MRP (₹2,999) on cards, ₹1,874 in the tray and the sale price (₹1,499) on review, so the same bag shows three “original” prices.</p>
-        <div class="fix"><span class="label">Fix</span><p>Round to whole rupees. Keep MRP as the one struck reference (the site standard: “Regular price ₹2,499 · 51% OFF”) and show the box discount as its own line: “Box of 4 discount −₹1,199”.</p></div>
+        <div class="fhead"><span class="sev sev-medium">Medium</span><span class="fid">C3</span><h3>Three different reference prices for the same bag</h3></div>
+        <p class="where">Product cards · tray · review screens</p>
+        <p>The struck price is MRP (₹2,999) on cards, ₹1,874 in the tray and the sale price (₹1,499) on review. The review also shows paise (₹1,199.20), which only exist because of the old discount maths. The live site and the rest of this file use whole rupees.</p>
+        <div class="fix"><span class="label">Fix</span><p>MRP is the only struck price, everywhere, matching the product page (the site standard: “Regular price ₹2,499 · 51% OFF”). Whole rupees throughout; with the discount gone this happens on its own.</p></div>
       </div>
     </article>
 
@@ -482,7 +487,7 @@ footer { font-size: 0.88rem; color: var(--muted); display: grid; gap: 8px; borde
       <div class="text">
         <div class="fhead"><span class="sev sev-medium">Medium</span><span class="fid">C5</span><h3>The exit dialog breaks the mobile pattern</h3></div>
         <p class="where">Overlay / Confirm frames (720px tall vs. 844px elsewhere)</p>
-        <p>A centred modal on an opaque near-black backdrop, with no close control. The Flow page used bottom sheets for the same kind of decision, which suits one-handed use.</p>
+        <p>A centred modal on an opaque near-black backdrop, with no close control. The Flow page used bottom sheets for the same kind of decision, which suits one-handed use and leaves room for the add-on thumbnails in A5.</p>
         <div class="fix"><span class="label">Fix</span><p>Bottom sheet over a translucent scrim with a close button, on an 844px frame like the rest.</p></div>
       </div>
     </article>
@@ -490,8 +495,8 @@ footer { font-size: 0.88rem; color: var(--muted); display: grid; gap: 8px; borde
     <article class="finding" id="c6">
       <div class="text">
         <div class="fhead"><span class="sev sev-medium">Medium</span><span class="fid">C6</span><h3>Six names for one feature</h3></div>
-        <p>Page: “Make Your Own Set”. Menu: “Build your own combo”. Flow page: “Make your own combo”. Screens: “Box of 4”. Review: “Review your combo”. And the Sale menu already has “Combos &amp; Sets” for fixed combos, which invites confusion.</p>
-        <div class="fix"><span class="label">Fix</span><p>Pick one name and one noun, used everywhere from the menu to the order confirmation. “Build your box” works well with “Box of 3”, and stays clear of “Combos &amp; Sets”.</p></div>
+        <p>Page: “Make Your Own Set”. Menu: “Build your own combo”. Flow page: “Make your own combo”. Screens: “Box of 4”. Review: “Review your combo”. And the Sale menu already has “Combos &amp; Sets” for fixed, discounted combos, which invites confusion.</p>
+        <div class="fix"><span class="label">Fix</span><p>Pick one name that says what the shopper gets, and use it from the menu to the order confirmation. With the matching look as the pitch, “Match your print” or “Build your set” fits better than “combo”, and stays clear of “Combos &amp; Sets”.</p></div>
       </div>
     </article>
 
@@ -516,61 +521,62 @@ footer { font-size: 0.88rem; color: var(--muted); display: grid; gap: 8px; borde
 
     <article class="finding" id="d2">
       <div class="text">
-        <div class="fhead"><span class="sev sev-medium">Medium</span><span class="fid">D2</span><h3>Copy that could work harder</h3></div>
+        <div class="fhead"><span class="sev sev-medium">Medium</span><span class="fid">D2</span><h3>Copy for the no-discount version</h3></div>
         <div class="table-wrap">
           <table>
             <thead><tr><th>Now</th><th>Suggested</th></tr></thead>
             <tbody>
-              <tr><td>Please review your combo and proceed to pay</td><td>4 items · 20% off applied</td></tr>
-              <tr><td>Done picking? You can check out now, or keep adding.</td><td>Add 2 more for 20% off · or check out with 2</td></tr>
-              <tr><td>Checkout with 2 of 4 products?</td><td>You’re 2 items away from 20% off</td></tr>
-              <tr><td>Add more &amp; save more</td><td>Upgrade to Box of 3 · 15% off everything</td></tr>
-              <tr><td>You saved ₹375</td><td>You save ₹375</td></tr>
-              <tr><td>Save more (menu tag)</td><td>Up to 20% off</td></tr>
+              <tr><td>Save more (menu tag)</td><td>Match your print</td></tr>
+              <tr><td>Please review your combo and proceed to pay</td><td>Your FloMotif set · 4 items</td></tr>
+              <tr><td>Done picking? You can check out now, or keep adding.</td><td>Add a pouch to complete your set · or check out with 2</td></tr>
+              <tr><td>Checkout with 2 of 4 products?</td><td>Your FloMotif set is missing a pouch and a charm</td></tr>
+              <tr><td>Add more &amp; save more · Add 1 more product to get 15% off</td><td>Complete your FloMotif set</td></tr>
+              <tr><td>You are saving ₹1,199.20 on this combo.</td><td>You save ₹6,000 on MRP</td></tr>
+              <tr><td>20% OFF (review rows)</td><td>Remove; show MRP struck and sale price, as on the product page</td></tr>
             </tbody>
           </table>
         </div>
-        <p>Keep “Pick one bag — everything else will be matched to it.” It sets up the matching promise well; B2 is about delivering it.</p>
+        <p>Keep “Pick one bag — everything else will be matched to it.” It states the value well; B1 and B2 are about delivering it.</p>
       </div>
     </article>
   </div>
 </section>
 
 <section id="playbook" class="stack">
-  <p class="eyebrow">AOV plan</p>
+  <p class="eyebrow">Plan for the test build</p>
   <h2>What to do, in order</h2>
-  <p class="col">Ranked by how much each change should move order value against the effort to ship it. Items 1–3 are prerequisites; the rest add upside.</p>
+  <p class="col">Ranked by how much each change should move order value against the effort to ship it. Items 1–3 must land before the test starts; the rest make the treatment arm worth testing.</p>
   <ol class="play">
-    <li><h3>One pricing rule, correct numbers everywhere</h3><p>Reward by items in the box, round rupees, MRP as the only struck price, tray updates on every change.</p><div class="tags"><span class="tag">A1 · A3 · C3</span><span class="tag">Blocker</span><span class="tag">Effort M</span></div></li>
-    <li><h3>Make the box the best deal on the site</h3><p>Settle stacking with the banner, coupons and BOGO, then set tiers or round box prices that beat each one.</p><div class="tags"><span class="tag">A2</span><span class="tag">Business decision</span><span class="tag">Effort S</span></div></li>
-    <li><h3>Real categories at each step, same print first</h3><p>One bag plus easy, cheaper extras in a matching print is the set people will actually complete.</p><div class="tags"><span class="tag">B1 · B2</span><span class="tag">Effort M</span></div></li>
-    <li><h3>Show the ladder at entry and in the tray</h3><p>10 / 15 / 20% beside each size in the menu; “add 2 more for 20% off” in the tray; size switcher in the header.</p><div class="tags"><span class="tag">A4</span><span class="tag">Effort S</span></div></li>
-    <li><h3>A loss-framed exit sheet with one-tap add-ons</h3><p>Turn the “are you sure?” dialog into the main upsell moment.</p><div class="tags"><span class="tag">A5</span><span class="tag">Effort S</span></div></li>
-    <li><h3>Show the effective price of the next item</h3><p>“+₹1,124 in your box” beats “₹1,499”.</p><div class="tags"><span class="tag">A6</span><span class="tag">Effort S</span></div></li>
-    <li><h3>Ready-made sets as a starting point</h3><p>The Flow page’s Option 6 (“Start from a look”) gives indecisive shoppers a full Box of 4 to tweak, which anchors on the largest box.</p><div class="tags"><span class="tag">New</span><span class="tag">Effort M</span></div></li>
-    <li><h3>Extras on the full-box review</h3><p>Gift wrap, initials (+₹149), another box for gifting.</p><div class="tags"><span class="tag">A7</span><span class="tag">Effort S</span></div></li>
-    <li><h3>Box in the cart, with an express “Pay now”</h3><p>Keeps cart offers and further shopping available; define partial returns.</p><div class="tags"><span class="tag">A8</span><span class="tag">Effort M</span></div></li>
+    <li><h3>Right category at each step, same print first</h3><p>This is the product. One bag plus a wallet, pouch and charm in the same print, with the set visibly building in the tray.</p><div class="tags"><span class="tag">B1 · B2</span><span class="tag">Blocker</span><span class="tag">Effort M</span></div></li>
+    <li><h3>Correct totals from one rule</h3><p>Total = sum of sale prices, struck = sum of MRPs, saving = the difference. Updates on every change, whole rupees.</p><div class="tags"><span class="tag">A1 · C3</span><span class="tag">Blocker</span><span class="tag">Effort S</span></div></li>
+    <li><h3>Remove every discount promise</h3><p>Six places listed in A2. Park the milestones frame for the gift test.</p><div class="tags"><span class="tag">A2</span><span class="tag">Blocker</span><span class="tag">Effort S</span></div></li>
+    <li><h3>Honest added-up savings, in both arms</h3><p>“You save ₹6,000 on MRP” in green in the builder, and the same line in the control cart.</p><div class="tags"><span class="tag">A3 · C1</span><span class="tag">Effort S</span></div></li>
+    <li><h3>Sell the look at the entry point</h3><p>“Match your print”, box sizes described by what goes in them, a real set photo on a banner.</p><div class="tags"><span class="tag">A4</span><span class="tag">Effort S</span></div></li>
+    <li><h3>“Complete your set” on exit and review</h3><p>Show what the set is missing, in her print, with one-tap adds.</p><div class="tags"><span class="tag">A5 · A6</span><span class="tag">Effort S</span></div></li>
+    <li><h3>Ready-made sets as a starting point</h3><p>The Flow page’s Option 6 (“Start from a look”) gives indecisive shoppers a full same-print Box of 4 to tweak.</p><div class="tags"><span class="tag">New</span><span class="tag">Effort M</span></div></li>
+    <li><h3>Box in the cart, with an express “Pay now”</h3><p>Group the box in the cart and tag it with a box ID so the test can attribute orders.</p><div class="tags"><span class="tag">A8</span><span class="tag">Effort M</span></div></li>
   </ol>
 </section>
 
 <section id="measure" class="two">
   <div class="panel">
-    <p class="eyebrow">Measurement</p>
-    <h2>How to tell if it works</h2>
-    <p><span class="label">Primary:</span> AOV of orders containing a box vs. site AOV, and items per order.</p>
-    <p><span class="label">Funnel:</span> menu tap → first pick → each step → review → paid. Box completion rate (full box vs. early exit). Share of exit sheets that end in “add more”. Upgrade rate from review cards.</p>
-    <p><span class="label">Guardrails:</span> builder conversion rate, discount cost as a share of incremental revenue, shift away from BOGO and Special Combos, return rate on box items.</p>
+    <p class="eyebrow">A/B test design</p>
+    <h2>Builder vs. no builder</h2>
+    <p><span class="label">Split:</span> randomise by user. Control sees the site without the builder entry points; treatment sees them. Both arms keep the sitewide banner and the same added-up savings line in the cart (A3).</p>
+    <p><span class="label">Primary:</span> revenue per visitor and AOV across the whole arm, plus items per order. Compare arms, not builder users vs. everyone else: people who open the builder were already more likely to buy more.</p>
+    <p><span class="label">Secondary:</span> builder funnel (entry → first pick → each step → review → paid), set completion rate, share of box items in the bag’s print, exit-sheet “complete my set” rate.</p>
+    <p><span class="label">Guardrails:</span> overall conversion rate, returns and exchanges on box items, shift away from BOGO and Special Combos.</p>
   </div>
   <div class="panel">
-    <p class="eyebrow">Tests worth running</p>
-    <h2>Four A/B tests</h2>
+    <p class="eyebrow">Before launch</p>
+    <h2>Write down when gifts come in</h2>
+    <p>Agree on these before the test starts, so the gift decision isn’t made after looking at the numbers:</p>
     <ul class="plain">
-      <li>Savings ladder shown in the menu vs. hidden.</li>
-      <li>Default size Box of 3 vs. Box of 4.</li>
-      <li>Loss-framed exit sheet with add-ons vs. the current dialog.</li>
-      <li>Round box prices (“Any 3 for ₹3,499”) vs. % off.</li>
+      <li>The smallest AOV lift worth shipping, and the sample size and run time that can detect it (full weeks only).</li>
+      <li>Which result triggers the gift variant: for example, builder conversion below a set level, or no significant AOV lift by the end date.</li>
+      <li>Keep the run clear of big sales like the Big Bag Festival, which would swamp the effect.</li>
+      <li>Next test if triggered: gift by box size (the parked milestones design) vs. no gift.</li>
     </ul>
-    <p>Tag box items with a box ID as a cart attribute so these can be measured; the Flow page already lists this as an open question.</p>
   </div>
 </section>
 
@@ -578,19 +584,19 @@ footer { font-size: 0.88rem; color: var(--muted); display: grid; gap: 8px; borde
   <p class="eyebrow">For the business</p>
   <h2>Open questions to settle before design continues</h2>
   <ul class="plain">
-    <li>Does the box discount stack with the sitewide banner, coupons or app offers?</li>
-    <li>Can BOGO or Special Combo items go into a box, and at which price?</li>
-    <li>Is the reward set by the box chosen or by the items in it?</li>
-    <li>What happens to the discount when one item from a box is returned or exchanged?</li>
+    <li>Does the sitewide “15% off above ₹2,500” apply to builder orders? If it does, show it in the tray and review so totals match checkout.</li>
+    <li>Can BOGO items go into a box, and at which price? BOGO pricing only works in pairs.</li>
+    <li>When a print doesn’t exist in a category (no charm in that print), what’s the fallback: a complementary print, or a neutral solid?</li>
     <li>Can a box hold two bags, or is it strictly one bag plus accessories?</li>
     <li>Does “Proceed to pay” include items already in the cart?</li>
+    <li>Is the MRP shown in the builder pulled from the same source as the product page, so the two can never differ?</li>
   </ul>
 </section>
 
 <footer>
   <p><b>Method.</b> All 25 frames on the Figma page “Make Your Own Set · Final” (node 1588:3255, file mf5eFMoSk0N3PUW7u1Dtu3) were reviewed in their empty and added states. They were compared with the “Make Your Own Combo · Flow” page (V2, 22 Oct 2026) for intent, and with the Web/Mobile Navigation page (06 PLP / Women’s Office Bags, 04 Menu Drawer / Sale) for UI consistency.</p>
   <p><b>Live site, checked 26 Oct 2026.</b> zouk.co.in home page, /collections/special-combos, /collections/wallets and /policies/shipping-policy (“We offer free shipping to all over India on all prepaid orders.”).</p>
-  <p>Prices in the Figma file are mock prices. Every figure in the tables comes from the frames as drawn.</p>
+  <p><b>Revision.</b> Updated the same day for two product decisions: no discounts during the A/B test, and a matching same-print look as the value proposition. Prices in the Figma file are mock prices; every figure in the tables comes from the frames as drawn.</p>
 </footer>
 
 </div>

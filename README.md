@@ -59,7 +59,7 @@ A senior UX + product (AOV) audit of the mobile "Make Your Own Set" builder: all
 
 Open `audit/make-your-own-set/index.html` in a browser. It covers:
 
-- 24 findings (4 blockers) in four areas: offer and pricing, flow and interaction, UI consistency, accessibility and copy
-- A price-reconciliation table: tray totals vs. the review screen
-- The box price compared with the "Flat 15% off above ₹2,500" banner
-- A ranked AOV plan, a measurement plan, and open questions for the business
+- The product decisions it assumes: no discounts during the A/B test (gifts are the fallback lever), a matching same-print look as the reason to use the builder, and savings shown as real MRP savings added up across the box
+- 24 findings (4 blockers) in four areas: pricing and savings, flow and interaction, UI consistency, accessibility and copy
+- A price-reconciliation table: what the tray shows now vs. what it should show
+- A ranked plan for the test build, an A/B test design, and open questions for the business
