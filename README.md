@@ -48,3 +48,18 @@ The bags are vector illustrations standing in for Zouk's product photography. Th
 - the **09 · Edge states** board: no story, a single print, no discount, zero design reviews, no "pair it with" rail
 
 It stopped at the Figma MCP Starter-plan limit (20 tool calls per month). Run it with `use_figma` against the file once the quota resets, or on a Professional plan.
+
+---
+
+# Audit — "Make Your Own Set · Final" (combo builder)
+
+**Figma file:** https://www.figma.com/design/mf5eFMoSk0N3PUW7u1Dtu3/Zouk?node-id=1588-3255
+
+A senior UX + product (AOV) audit of the mobile "Make Your Own Set" builder: all 25 frames on the page (Box of 2 / 3 / 4, empty and added states, the milestones variant, exit dialogs and review screens), checked against the file's "Make Your Own Combo · Flow" and navigation/PLP pages and against live zouk.co.in offers.
+
+Open `audit/make-your-own-set/index.html` in a browser. It covers:
+
+- 24 findings (4 blockers) in four areas: offer and pricing, flow and interaction, UI consistency, accessibility and copy
+- A price-reconciliation table: tray totals vs. the review screen
+- The box price compared with the "Flat 15% off above ₹2,500" banner
+- A ranked AOV plan, a measurement plan, and open questions for the business
